@@ -11,13 +11,14 @@ describe('Categories Model (Singular)', () => {
     const categories = new Categories();
     const testingCategories = {
       name: 'Sam',
-      description: 'Redhead'
+      description: 'blonde'
     };
 
     return categories.create(testingCategories)
       .then(savedCategories => {
         Object.keys(testingCategories).forEach(key => {
           expect(savedCategories[key]).toEqual(testingCategories[key]);
+          console.log(savedCategories);
         });
       })
       .catch(error => console.log(error));
